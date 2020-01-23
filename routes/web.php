@@ -47,6 +47,13 @@ Route::get('Pesan/{makan?}/{minum?}/{harga?}',function($makan=null,$minum=null,$
     }
     return $str;
 });
+Route::get('testmodel', function() {
+    $post = new App\Post;
+$post->title = "7 Amalan Pembuka Jodoh";
+$post->content = "shalat malam, sedekah, puasa sunah, silaturahmi, senyum, doa, tobat";
+$post->save();
+return $post;
+});
 
 route::get('tni/{nama?}/{bb?}/{umur?}',function($nama=null,$bb=null,$umur=null){
 $str = "Silahkan masukkan data terlebih dahulu";
