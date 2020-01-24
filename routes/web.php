@@ -92,3 +92,28 @@ if (isset($umur)) {
 }
 return $str;
 });
+
+// Model books
+// Model books
+Route::get('data-buku/ambil3', function ()
+{
+    $data = App\Tugas::all()
+    ->take(3);
+    return $data;
+});
+Route::get('data-buku/select', function ()
+{
+    $data = App\Tugas::select('nama_buku','penerbit','penulis')->first();
+    return $data;
+});
+Route::get('data-buku/tambahbuku/{nama_buku}/{id_buku}/{jumlah_halaman}/{penerbit}/{penulis}', function($nama,$idbuku,$jhal,$penerbit,$penulis) {
+    $post = new App\Tugas;
+    $post->nama_buku = $nama;
+    $post->id_buku = $idbuku;
+    $post->jumlah_halaman = $jhal;
+    $post->penerbit = $penerbit;
+    $post->penulis = $penulis;
+    $post->save();
+    return $post;
+// check record baru di database
+    });
