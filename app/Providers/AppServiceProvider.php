@@ -28,4 +28,3 @@ class AppServiceProvider extends ServiceProvider
         Schema::defaultStringLength(191);
     }
 }
- //ku abi tos di leresken

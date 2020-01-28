@@ -117,3 +117,11 @@ Route::get('data-buku/tambahbuku/{nama_buku}/{id_buku}/{jumlah_halaman}/{penerbi
     return $post;
 // check record baru di database
     });
+
+    route::get('latihan','LatihanController@latihan');
+
+    route::get('tambah/{a?}/{b?}','LatihanController@plus');
+    route::get('kurang/{a?}/{b?}','LatihanController@minus');
+    route::get('bagi/{a?}/{b?}','LatihanController@spare');
+    route::get('kali/{a?}/{b?}','LatihanController@multi');
+    route::get('/data-1','LatihanController@loop');
