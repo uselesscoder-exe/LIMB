@@ -124,4 +124,18 @@ Route::get('data-buku/tambahbuku/{nama_buku}/{id_buku}/{jumlah_halaman}/{penerbi
     route::get('kurang/{a?}/{b?}','LatihanController@minus');
     route::get('bagi/{a?}/{b?}','LatihanController@spare');
     route::get('kali/{a?}/{b?}','LatihanController@multi');
-    route::get('/data-1','LatihanController@loop');
+    route::get('/data-1','LatihanController@kantor');
+
+    route::get('tabungan','TabunganController@index');
+    route::get('tabungan/{id?}','TabunganController@show');
+    route::get('tabungan-tambah/{nis?}/{nama?}/{kelas?}/{jml?}','TabunganController@store');
+    route::get('tabungan-destroy/{id?}','TabunganController@destroy');
+    route::get('tabungan-edit/{id}/{nis?}/{nama?}/{kelas?}/{jml?}','TabunganController@edit');
+
+    route::get('customer','CustomerController@index');
+    route::get('customer/{id?}','CustomerController@show');
+    route::get('customer-tambah/{Code?}/{Name?}/{email?}/{Country?}/{City?}/{address?}/{ContactNumber?}','CustomerController@store');
+    route::get('customer-destroy/{id?}','CustomerController@destroy');
+    route::get('customer-edit/{id}/{Code?}/{Name?}/{email?}/{Country?}/{City?}/{address?}/{ContactNumber?}/','CustomerController@edit');
+
+

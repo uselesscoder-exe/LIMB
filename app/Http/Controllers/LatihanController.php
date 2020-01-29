@@ -106,22 +106,38 @@ class LatihanController extends Controller
         $Staff=2500000;
         $data = [
             ['Nama'=>'Anggara','Agama'=>'Islam','Alamat'=>'Jl Martawangsa','Jenis Kelamin'=>'Laki-Laki','Jabatan'=>'Manager','Jam Kerja'=>250,'Gaji Bersih'=>$Manager],
-            ['Nama'=>'Laffey','Agama'=>'Hindu','Alamat'=>'Jl Kidul','Jenis Kelamin'=>'Perempuan','Jabatan'=>'Sekretaris','Jam Kerja'=>200,'Gaji Bersih'=>$Sekretaris],
+            ['Nama'=>'Enterprise','Agama'=>'Hindu','Alamat'=>'Jl Kidul','Jenis Kelamin'=>'Perempuan','Jabatan'=>'Sekretaris','Jam Kerja'=>200,'Gaji Bersih'=>$Sekretaris],
             ['Nama'=>'Alan','Agama'=>'Kristen','Alamat'=>'Jl Gilgamesh','Jenis Kelamin'=>'Laki-Laki','Jabatan'=>'Staff','Jam Kerja'=>150,'Gaji Bersih'=>$Staff],
         ];
         foreach ($data as $key => $value) {
-            if ($value['Jam kerja']>=250) {
+            if ($value['Jam Kerja']>=250) {
                 $a=$value['Gaji Bersih']*10/100;
                 $bonus=$value['Gaji Bersih']+$a;
+                $ppn = $bonus*0.025;
+                $gatot = $bonus-$ppn;
             }
-            elseif ($value['Jam kerja']>=200) {
+            elseif ($value['Jam Kerja']>=200) {
                 $a=$value['Gaji Bersih']*5/100;
                 $bonus=$value['Gaji Bersih']+$a;
+                $ppn = $bonus*0.025;
+                $gatot = $bonus-$ppn;
             }
             else {
                 $a = 0;
                 $bonus=$value['Gaji Bersih'];
+                $ppn = $bonus*0.025;
+                $gatot = $bonus-$ppn;
             }
+            echo "<hr> Nama :". $value['Nama'].
+            " <br> Agama :". $value['Agama'].
+            " <br> Alamat :".$value['Alamat'].
+            " <br> Jenis Kelamin :".$value['Jenis Kelamin'].
+            " <br> Jabatan :".$value['Jabatan'].
+            " <br> Jam Kerja :". $value['Jam Kerja'].
+            " <br> Gaji Bersih :". $value['Gaji Bersih'].
+            " <br> Bonus :".$a.
+            " <br> Potongan :".$ppn.
+            " <br> Total uang :".$gatot."<hr>";
         }
     }
 }

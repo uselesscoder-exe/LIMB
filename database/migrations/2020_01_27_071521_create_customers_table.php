@@ -21,7 +21,7 @@ class CreateCustomersTable extends Migration
             $table->string('Country');
             $table->string('City');
             $table->string('address');
-            $table->string('Contact Number')->unique();
+            $table->string('ContactNumber')->unique();
             $table->timestamps();
         });
     }
