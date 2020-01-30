@@ -137,5 +137,7 @@ Route::get('data-buku/tambahbuku/{nama_buku}/{id_buku}/{jumlah_halaman}/{penerbi
     route::get('customer-tambah/{Code?}/{Name?}/{email?}/{Country?}/{City?}/{address?}/{ContactNumber?}','CustomerController@store');
     route::get('customer-destroy/{id?}','CustomerController@destroy');
     route::get('customer-edit/{id}/{Code?}/{Name?}/{email?}/{Country?}/{City?}/{address?}/{ContactNumber?}/','CustomerController@edit');
-
+    // Passing data MVC slur
+    Route::get('pass','PracticeController@pass1');
+    Route::get('pass-bank','PracticeController@pass2');
 
