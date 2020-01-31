@@ -140,4 +140,9 @@ Route::get('data-buku/tambahbuku/{nama_buku}/{id_buku}/{jumlah_halaman}/{penerbi
     // Passing data MVC slur
     Route::get('pass','PracticeController@pass1');
     Route::get('pass-bank','PracticeController@pass2');
+    Route::get('pass-tabungan/{id}','PracticeController@pass3');
+    Route::get('book','BookController@bookall');
+    Route::get('book/{id?}','BookController@bookfind');
+    Route::get('people','BookController@pall');
+    Route::get('people/{id?}','BookController@pfind');
 

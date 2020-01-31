@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Tugas extends Migration
+class PeopleMigrate extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,15 @@ class Tugas extends Migration
      */
     public function up()
     {
-        Schema::create('tugas', function (Blueprint $table) {
+        Schema::create('People', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nama_buku');
-            $table->string('id_buku');
-            $table->integer('jumlah_halaman');
-            $table->string('penerbit');
-            $table->string('penulis');
-            $table->integer('harga');
+            $table->string('name');
+            $table->string('address');
+            $table->integer('age');
+            $table->string('region');
+            $table->string('phone');
+            $table->string('AreaCode');
+            $table->string('wealth');
             $table->timestamps();
         });
     }
@@ -32,6 +33,6 @@ class Tugas extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tugas');
+        Schema::dropIfExists('People');
     }
 }

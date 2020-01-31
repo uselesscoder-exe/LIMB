@@ -10,8 +10,21 @@
     <center>Daftar Ngutang</center>
     @foreach ($tabungan as $item)
     <hr>
+    id : {{$item->id}}<br>
     Nama : {{$item->nama}}<br>
-    Nis : {{$item->nis}}<hr>
+    Nis : {{$item->nis}}<br>
+    Kelas : {{$item->kelas}}<br>
+    Jumlah : {{$item->jml}}<br>
+    @if ($item->jml >= 50000)
+        Jenis Paket : Paket A
+    @elseif ($item->jml >= 25000)
+        Jenis Paket : Paket B
+    @elseif ($item->jml >= 10000)
+        Jenis paket : Paket C
+    @else
+        Jenis paket : -
+    @endif
+    <hr>
     @endforeach
 </body>
 </html>
